@@ -10,3 +10,13 @@ class Solution:
             ones &= threes
             twos &= threes
         return ones
+
+'''
+更多的進位表示：
+fours |= twos & ones & num
+eights |= fours & twos & ones & num
+...
+5：fives = ~(fours & ones)
+7：sevens = ~(fours & twos & ones)
+...
+'''
