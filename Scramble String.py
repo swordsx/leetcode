@@ -13,7 +13,7 @@ class Solution:
             for i in range(length - n):
                 for j in range(length - n):
                     for k in range(n):
-                        dp[n][i][j] = ((dp[k][i][j] and dp[n-k-1][i+k+1][j+k+1]) or
-                                       (dp[k][i][j+n-k] and dp[n-k-1][i+k+1][j]))
-                        if dp[n][i][j]: break
+                        if (dp[k][i][j] and dp[n-k-1][i+k+1][j+k+1]) or (dp[k][i][j+n-k] and dp[n-k-1][i+k+1][j]):
+                            dp[n][i][j] = True
+                            break
         return dp[-1][0][0]
