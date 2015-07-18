@@ -1,0 +1,13 @@
+class Solution:
+    # @param {integer[]} height
+    # @return {integer}
+    def trap(self, height):
+        result = 0
+        stack = []
+        for i in range(len(height)):                  
+            while stack and height[stack[-1]] < height[i]:
+                j = stack.pop()
+                if stack:
+                    result += (i - stack[-1] - 1) * (min(height[stack[-1]], height[i]) - height[j])
+            stack.append(i)
+        return result
