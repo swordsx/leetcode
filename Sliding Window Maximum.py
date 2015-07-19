@@ -13,8 +13,5 @@ class Solution:
             while queue and i - queue[0] >= k:
                 queue.popleft()
             if i <= k - 2: continue
-            curmax = nums[queue[0]]
-            for j in range(1, len(queue)):
-                curmax = max(curmax, nums[queue[1]])
-            result.append(curmax)
+            result.append(num[queue[0]])
         return result
