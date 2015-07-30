@@ -17,3 +17,17 @@ class Solution:
             if len(anagramsDict[key]) > 1:
                 result += anagramsDict[key]
         return result
+
+
+class Solution:
+    # @param {string[]} strs
+    # @return {string[]}
+    def anagrams(self, strs):
+        result = []
+        anagramsDict = collections.defaultdict(list)
+        for string in strs:
+            anagramsDict[''.join(sorted(string))].append(string)
+        for key in anagramsDict:
+            if len(anagramsDict[key]) > 1:
+                result += anagramsDict[key]
+        return result
